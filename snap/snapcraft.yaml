@@ -1,0 +1,48 @@
+name: combined-arms
+base: core22
+version: '1.04'
+summary: "Combined Arms Game"
+description: Combined Arms is a standalone mod of Command & Conquer Red Alert.
+grade: stable
+confinement: strict
+compression: lzo
+
+apps:
+  openra-ca:
+    extensions: [gnome]
+    command: usr/bin/openra-ca
+    common-id: openra-ca.desktop
+    desktop: usr/share/applications/openra-ca.desktop
+    plugs:
+      - audio-playback
+      - avahi-control
+      - avahi-observe
+      - desktop
+      - mount-observe
+      - network
+      - network-bind
+      - opengl
+      - removable-media
+      - wayland
+      - x11
+
+parts:
+  install-dotnet:
+    plugin: nil
+    override-pull: |
+      curl -LO https://dot.net/v1/dotnet-install.sh
+      chmod +x dotnet-install.sh
+      ./dotnet-install.sh --channel LTS
+
+  combined-arms:
+    after: [install-dotnet]
+    plugin: dump
+    source: https://github.com/Inq8/CAmod/releases/download/1.04/CombinedArms-1.04-x86_64.AppImage
+    source-type: file
+    override-build: |
+      chmod +x $SNAPCRAFT_PART_SRC/CombinedArms-1.04-x86_64.AppImage
+      $SNAPCRAFT_PART_SRC/CombinedArms-1.04-x86_64.AppImage --appimage-extract
+      rm -rf $SNAPCRAFT_PART_INSTALL/*
+      mv squashfs-root/* $SNAPCRAFT_PART_INSTALL/
+
+      sed -i -Ee 's|^Icon=(.*)$|Icon=/usr/share/icons/hicolor/1024x1024/apps/\1.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/openra-ca.desktop

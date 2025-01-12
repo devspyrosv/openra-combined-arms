@@ -26,6 +26,10 @@ apps:
       - wayland
       - x11
 
+architectures:
+  - build-on: [amd64]
+    build-for: [amd64]
+
 parts:
   install-dotnet:
     plugin: nil

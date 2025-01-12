@@ -1,14 +1,14 @@
-name: combined-arms
+name: cnc-combined-arms
 base: core22
 version: '1.04'
-summary: "Combined Arms Game"
+summary: "Command & Conquer - Combined Arms"
 description: Combined Arms is a standalone mod of Command & Conquer Red Alert.
 grade: stable
 confinement: strict
 compression: lzo
 
 apps:
-  openra-ca:
+  cnc-combined-arms:
     extensions: [gnome]
     command: usr/bin/openra-ca
     common-id: openra-ca.desktop
@@ -38,7 +38,7 @@ parts:
       chmod +x dotnet-install.sh
       ./dotnet-install.sh --channel LTS
 
-  combined-arms:
+  cnc-combined-arms:
     after: [install-dotnet]
     plugin: dump
     source: https://github.com/Inq8/CAmod/releases/download/1.04/CombinedArms-1.04-x86_64.AppImage

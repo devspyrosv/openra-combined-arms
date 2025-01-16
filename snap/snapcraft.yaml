@@ -33,6 +33,8 @@ architectures:
 parts:
   install-dotnet:
     plugin: nil
+    build-packages:
+      - curl
     override-pull: |
       curl -LO https://dot.net/v1/dotnet-install.sh
       chmod +x dotnet-install.sh
@@ -41,6 +43,8 @@ parts:
   cnc-combined-arms:
     after: [install-dotnet]
     plugin: dump
+    build-packages:
+      - sed
     source: https://github.com/Inq8/CAmod/releases/download/1.04/CombinedArms-1.04-x86_64.AppImage
     source-type: file
     override-build: |

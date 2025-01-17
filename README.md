@@ -4,8 +4,8 @@
   OpenRA - Combined Arms - Snap
 </h1>
 
+[![cnc-combined-arms](https://snapcraft.io/cnc-combined-arms/badge.svg)](https://snapcraft.io/cnc-combined-arms) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
----
 
 ### About the Snap
 

@@ -2,7 +2,7 @@ name: cnc-combined-arms
 base: core22
 version: '1.04'
 summary: "OpenRA - Combined Arms"
-description: Combined Arms is a standalone mod of Command & Conquer Red Alert.
+description: Combined Arms is a completely free Command & Conquer game built on the OpenRA engine.
 grade: stable
 confinement: strict
 compression: lzo

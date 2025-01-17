@@ -45,7 +45,7 @@ issues:
   - https://github.com/devspyrosv/cnc-combined-arms/issues
 license: GPL-3.0-only  
 name: cnc-combined-arms
-summary: Combined Arms is a completely free Command & Conquer game built on the OpenRA engine.
+summary: "OpenRA - Combined Arms"
 source-code:
   - https://github.com/Inq8/CAmod
   - https://github.com/devspyrosv/cnc-combined-arms

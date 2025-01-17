@@ -1,7 +1,6 @@
-name: cnc-combined-arms
 base: core22
-version: '1.04'
-summary: "OpenRA - Combined Arms"
+compression: lzo
+confinement: strict
 description: | 
   What started out as a simple fusion of the Westwood original _Tiberian Dawn_ and _Red Alert_ games, the project evolved by incorporating a plethora of new units, gameplay mechanics, and additional features.
   
@@ -39,9 +38,20 @@ description: |
   * Inq8 and CAMod contributors
   * OpenRA Dev team (& Westwood) 
 
-grade: stable
-confinement: strict
-compression: lzo
+grade: devel
+icon: icons/openra-ca.png
+issues:
+  - https://github.com/Inq8/CAmod/issues
+  - https://github.com/devspyrosv/cnc-combined-arms/issues
+license: GPL-3.0-only  
+name: cnc-combined-arms
+summary: Combined Arms is a completely free Command & Conquer game built on the OpenRA engine.
+source-code:
+  - https://github.com/Inq8/CAmod
+  - https://github.com/devspyrosv/cnc-combined-arms
+title: OpenRA - Combined Arms
+version: "1.04"
+website: https://www.moddb.com/mods/command-conquer-combined-arms
 
 apps:
   cnc-combined-arms:

@@ -29,8 +29,14 @@ sudo snap install --dangerous combined-arms_1.04_amd64.snap
 ```
 
 ## 🛒 Install from the Snap Store
-> coming soon...
-
+stable:
+```bash
+sudo snap install cnc-combined-arms
+```
+beta:
+```bash
+sudo snap install cnc-combined-arms --beta
+```
 ## 📥 Extra Game Data
 To add game data from original Command & Conquer game discs, you can allow mounting optical drives. Run the following commands:
 

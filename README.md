@@ -6,6 +6,7 @@
 
 [![cnc-combined-arms](https://snapcraft.io/cnc-combined-arms/badge.svg)](https://snapcraft.io/cnc-combined-arms) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+[![Get it from the Snap Store](https://snapcraft.io/en/light/install.svg)](https://snapcraft.io/cnc-combined-arms)
 
 ### About the Snap
 
@@ -28,10 +29,7 @@ snapcraft clean && snapcraft
 sudo snap install --dangerous combined-arms_1.04_amd64.snap
 ```
 
-## 🛒 Install from the Snap Store
-
-[![Get it from the Snap Store](https://snapcraft.io/en/light/install.svg)](https://snapcraft.io/cnc-combined-arms)
-
+## 🛒 Install from Snap Store
 
 stable:
 ```bash

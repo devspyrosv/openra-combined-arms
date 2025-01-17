@@ -29,6 +29,10 @@ sudo snap install --dangerous combined-arms_1.04_amd64.snap
 ```
 
 ## 🛒 Install from the Snap Store
+
+[![Get it from the Snap Store](https://snapcraft.io/en/light/install.svg)](https://snapcraft.io/cnc-combined-arms)
+
+
 stable:
 ```bash
 sudo snap install cnc-combined-arms

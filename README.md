@@ -4,9 +4,9 @@
   OpenRA - Combined Arms - Snap
 </h1>
 
-[![cnc-combined-arms](https://snapcraft.io/cnc-combined-arms/badge.svg)](https://snapcraft.io/cnc-combined-arms) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![openra-combined-arms](https://snapcraft.io/openra-combined-arms/badge.svg)](https://snapcraft.io/openra-combined-arms) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-[![Get it from the Snap Store](https://snapcraft.io/en/light/install.svg)](https://snapcraft.io/cnc-combined-arms)
+[![Get it from the Snap Store](https://snapcraft.io/en/light/install.svg)](https://snapcraft.io/openra-combined-arms)
 
 ### About the Snap
 
@@ -26,25 +26,25 @@ snapcraft clean && snapcraft
 
 ## 📦 Install Locally Built Version
 ```bash
-sudo snap install --dangerous combined-arms_1.04_amd64.snap
+sudo snap install --dangerous openra-combined-arms_1.04_amd64.snap
 ```
 
 ## 🛒 Install from Snap Store
 
 stable:
 ```bash
-sudo snap install cnc-combined-arms
+sudo snap install openra-combined-arms
 ```
 beta:
 ```bash
-sudo snap install cnc-combined-arms --beta
+sudo snap install openra-combined-arms --beta
 ```
 ## 📥 Extra Game Data
 To add game data from original Command & Conquer game discs, you can allow mounting optical drives. Run the following commands:
 
 ```bash
-sudo snap connect combined-arms:mount-observe
-sudo snap connect combined-arms:removable-media
+sudo snap connect openra-combined-arms:mount-observe
+sudo snap connect openra-combined-arms:removable-media
 ```
 
 ## 📚 Useful Links

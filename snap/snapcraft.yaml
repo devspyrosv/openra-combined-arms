@@ -32,7 +32,26 @@ description: |
   By confining the game within a _sandboxed_ environment, the snap limits its access to system resources, ensuring that it can run safely without interfering with your operating system or accessing sensitive data. 
   This approach not only enhances security but also makes the game easier to install and run across different Linux distributions, leveraging the convenience of Snap's universal packaging format.
   
+  **Install from Snap Store**
+
+  stable:  
+  ```
+  sudo snap install openra-combined-arms
+  ```
   
+  beta:
+  ```
+  sudo snap install openra-combined-arms --beta
+  ```
+  
+  **Extra Game Data**
+
+  To add game data from original Command & Conquer game discs, you can allow mounting optical drives. Run the following commands:
+  
+  ```
+  sudo snap connect openra-combined-arms::mount-observe
+  sudo snap connect openra-combined-arms::removable-media
+  ```
   **Credits**
   
   * Inq8 and CAMod contributors
@@ -42,19 +61,19 @@ grade: devel
 icon: icons/openra-ca.png
 issues:
   - https://github.com/Inq8/CAmod/issues
-  - https://github.com/devspyrosv/cnc-combined-arms/issues
+  - https://github.com/devspyrosv/openra-combined-arms/issues
 license: GPL-3.0-only  
-name: cnc-combined-arms
-summary: "OpenRA - Combined Arms"
+name: openra-combined-arms
+summary: "OpenRA - Combined Arms - Command & Conquer game built on the OpenRA engine"
 source-code:
   - https://github.com/Inq8/CAmod
-  - https://github.com/devspyrosv/cnc-combined-arms
+  - https://github.com/devspyrosv/openra-combined-arms
 title: OpenRA - Combined Arms
 version: "1.04"
 website: https://www.moddb.com/mods/command-conquer-combined-arms
 
 apps:
-  cnc-combined-arms:
+  openra-combined-arms:
     extensions: [gnome]
     command: usr/bin/openra-ca
     common-id: openra-ca.desktop
@@ -86,7 +105,7 @@ parts:
       chmod +x dotnet-install.sh
       ./dotnet-install.sh --channel LTS
 
-  cnc-combined-arms:
+  openra-combined-arms:
     after: [install-dotnet]
     plugin: dump
     build-packages:

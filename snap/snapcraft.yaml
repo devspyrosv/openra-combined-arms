@@ -57,7 +57,7 @@ description: |
   * Inq8 and CAMod contributors
   * OpenRA Dev team (& Westwood) 
 
-grade: devel
+grade: stable
 icon: icons/openra-ca.png
 issues:
   - https://github.com/Inq8/CAmod/issues

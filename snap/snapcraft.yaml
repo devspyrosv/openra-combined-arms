@@ -67,7 +67,7 @@ source-code:
   - https://github.com/Inq8/CAmod
   - https://github.com/devspyrosv/openra-combined-arms
 title: OpenRA - Combined Arms
-version: "1.06.1"
+version: "1.07.1"
 website: https://www.moddb.com/mods/command-conquer-combined-arms
 
 apps:
@@ -108,11 +108,11 @@ parts:
     plugin: dump
     build-packages:
       - sed
-    source: https://github.com/Inq8/CAmod/releases/download/1.06.1/CombinedArms-1.06.1-x86_64.AppImage
+    source: https://github.com/Inq8/CAmod/releases/download/1.07.1/CombinedArms-1.07.1-x86_64.AppImage
     source-type: file
     override-build: |
-      chmod +x $SNAPCRAFT_PART_SRC/CombinedArms-1.06.1-x86_64.AppImage
-      $SNAPCRAFT_PART_SRC/CombinedArms-1.06.1-x86_64.AppImage --appimage-extract
+      chmod +x $SNAPCRAFT_PART_SRC/CombinedArms-1.07.1-x86_64.AppImage
+      $SNAPCRAFT_PART_SRC/CombinedArms-1.07.1-x86_64.AppImage --appimage-extract
       rm -rf $SNAPCRAFT_PART_INSTALL/*
       mv squashfs-root/* $SNAPCRAFT_PART_INSTALL/
 

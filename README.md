@@ -26,7 +26,7 @@ snapcraft clean && snapcraft
 
 ## 📦 Install Locally Built Version
 ```bash
-sudo snap install --dangerous openra-combined-arms_1.07.1_amd64.snap
+sudo snap install --dangerous openra-combined-arms_1.08.1_amd64.snap
 ```
 
 ## 🛒 Install from Snap Store

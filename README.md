@@ -4,54 +4,139 @@
   OpenRA - Combined Arms - Snap
 </h1>
 
-[![openra-combined-arms](https://snapcraft.io/openra-combined-arms/badge.svg)](https://snapcraft.io/openra-combined-arms) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![openra-combined-arms](https://snapcraft.io/openra-combined-arms/badge.svg)](https://snapcraft.io/openra-combined-arms)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 [![Get it from the Snap Store](https://snapcraft.io/en/light/install.svg)](https://snapcraft.io/openra-combined-arms)
 
-### About the Snap
+---
 
-This is a **Snap package** for **OpenRA - Combined Arms**, a modern remake of Command & Conquer games powered by the OpenRA engine. 
+## 📦 About the Snap
+
+This is a **Snap package** for **OpenRA - Combined Arms**, a modern remake of Command & Conquer games powered by the OpenRA engine.
 
 Play a standalone mod with unique features, enhanced visuals, and a reimagined RTS experience.
 
-This snap was created to provide a safer and more secure way to enjoy OpenRA - Combined Arms. By confining the game within a sandboxed environment, the snap limits its access to system resources, ensuring that it can run safely without interfering with your operating system or accessing sensitive data. This approach not only enhances security but also makes the game easier to install and run across different Linux distributions, leveraging the convenience of Snap's universal packaging format.
+This snap provides a **sandboxed and secure runtime environment**, limiting access to system resources while ensuring compatibility across Linux distributions via Snap’s universal packaging.
 
 ---
 
-## 🚀 Build Locally
+## 🚀 Build Locally (Manual)
 
 ```bash
-snapcraft clean && snapcraft
+cd snap
+snapcraft clean
+snapcraft pack
 ```
+
+---
 
 ## 📦 Install Locally Built Version
+
 ```bash
-sudo snap install --dangerous openra-combined-arms_1.08.1_amd64.snap
+sudo snap install --dangerous snap/openra-combined-arms_1.08.2_amd64.snap
 ```
+
+---
+
+## 🛠️ Development with Makefile (Recommended)
+
+A Makefile is included to simplify development, testing, and iteration.
+
+### 🔹 First-time setup
+
+```bash
+make build
+make install
+make smoke
+```
+
+---
+
+### 🔹 Normal development loop
+
+```bash
+make build
+make refresh
+make smoke
+```
+
+---
+
+### 🔹 Fast loop
+
+```bash
+make dev
+```
+
+---
+
+### 🔹 If something breaks
+
+```bash
+make clean
+make build
+make reinstall
+```
+
+---
+
+### 🔹 Full non-interactive verification
+
+```bash
+make test-all
+```
+
+---
+
+### 🔹 Useful commands
+
+```bash
+make run          # launch the game
+make logs         # follow snap logs
+make connections  # inspect interfaces
+```
+
+---
+
+### 🔹 Cleanup
+
+```bash
+make clean            # clear snapcraft build state
+make clean-artifacts  # remove built .snap files
+make clean-all        # both
+```
+
+---
 
 ## 🛒 Install from Snap Store
 
-stable:
+### Stable
+
 ```bash
 sudo snap install openra-combined-arms
 ```
-beta:
+
+### Beta
+
 ```bash
 sudo snap install openra-combined-arms --beta
 ```
+
+---
+
 ## 📥 Extra Game Data
-To add game data from original Command & Conquer game discs, you can allow mounting optical drives. Run the following commands:
+
+To enable access to original Command & Conquer game data (e.g. discs or external storage):
 
 ```bash
 sudo snap connect openra-combined-arms:mount-observe
 sudo snap connect openra-combined-arms:removable-media
 ```
 
+---
+
 ## 📚 Useful Links
 
-
-Combined Arms GitHub Repository: <a href="https://github.com/Inq8/CAmod"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub Repository"></a>
-
-
-Combined Arms ModDB Page: <a href="https://www.moddb.com/mods/command-conquer-combined-arms"><img src="https://img.shields.io/badge/moddb-Command%20%26%20Conquer%20Combined%20Arms-red" alt="ModDB Link"></a>
-
+- GitHub Repository: https://github.com/Inq8/CAmod  
+- ModDB Page: https://www.moddb.com/mods/command-conquer-combined-arms

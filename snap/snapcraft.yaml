@@ -56,7 +56,7 @@ description: |
   * OpenRA Dev team (& Westwood) 
 
 grade: stable
-icon: ../icons/openra-ca.png
+icon: icons/openra-ca.png
 issues:
   - https://github.com/Inq8/CAmod/issues
   - https://github.com/devspyrosv/openra-combined-arms/issues

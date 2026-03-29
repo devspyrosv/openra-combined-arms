@@ -11,9 +11,9 @@ SNAP_ARCH ?= amd64
 # Read the version from snap/snapcraft.yaml so names stay in sync.
 SNAP_VERSION ?= $(shell sed -n 's/^version:[[:space:]]*"\?\([^"]*\)"\?/\1/p' "$(SNAP_YAML)" 2>/dev/null | head -n 1)
 
-# Snapcraft currently writes the built snap into snap/.
-SNAP_FILE ?= $(shell ls -1 $(SNAP_DIR)/$(SNAP_NAME)_*.snap 2>/dev/null | sort -V | tail -n 1)
-SNAP_EXPECTED_FILE := $(SNAP_DIR)/$(SNAP_NAME)_$(SNAP_VERSION)_$(SNAP_ARCH).snap
+# snapcraft pack is currently producing the built snap in the repo root.
+SNAP_FILE ?= $(shell ls -1 $(SNAP_NAME)_*.snap 2>/dev/null | sort -V | tail -n 1)
+SNAP_EXPECTED_FILE := $(SNAP_NAME)_$(SNAP_VERSION)_$(SNAP_ARCH).snap
 
 # Standard mount point after installation.
 SNAP_MOUNT_DIR := /snap/$(SNAP_NAME)/current
@@ -25,9 +25,8 @@ SNAP_MOUNT_DIR := /snap/$(SNAP_NAME)/current
 	test-layout test-shell test-env test-desktop test-confinement \
 	test-artifact-version test-manual-launch dev
 
-# Always run snapcraft from the snap/ directory.
 define snapcraft_cmd
-	cd "$(SNAP_DIR)" && $(SNAPCRAFT) $(1)
+	$(SNAPCRAFT) $(1)
 endef
 
 help: ## Show help and the workflows that make sense for this project
@@ -51,7 +50,7 @@ help: ## Show help and the workflows that make sense for this project
 	@echo ""
 	@echo "Cleanup:"
 	@echo "  make clean            # clear snapcraft build state"
-	@echo "  make clean-artifacts  # remove built .snap files from snap/"
+	@echo "  make clean-artifacts  # remove built .snap files from repo root"
 	@echo "  make clean-all        # both"
 	@echo ""
 	@echo "Targets:"
@@ -79,8 +78,8 @@ rebuild: ## Clean snapcraft state and build again
 clean: ## Clean snapcraft build state
 	$(call snapcraft_cmd,clean)
 
-clean-artifacts: ## Remove built snap files from snap/
-	rm -f $(SNAP_DIR)/*.snap $(SNAP_DIR)/*.assert
+clean-artifacts: ## Remove built snap files from the repo root
+	rm -f ./*.snap ./*.assert
 
 clean-all: ## Clean snapcraft state and remove built artifacts
 	$(MAKE) clean

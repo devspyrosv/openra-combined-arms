@@ -34,7 +34,7 @@ snapcraft pack
 ## 📦 Install Locally Built Version
 
 ```bash
-sudo snap install --dangerous snap/openra-combined-arms_1.08.2_amd64.snap
+sudo snap install --dangerous snap/openra-combined-arms_1.09_amd64.snap
 ```
 
 ---
